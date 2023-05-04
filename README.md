@@ -16,3 +16,6 @@ This is Sploot's backend assignment, implemented as per the instructions given i
 
 6. Postman
 
+# Hosted on Render
+
+https://sploot-backend-assignment.onrender.com/

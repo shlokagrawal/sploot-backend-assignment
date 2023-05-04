@@ -169,6 +169,10 @@ app.patch('/api/users/:userId', async function(req, res) {
     }
 });
 
+app.get("/", function (req,res) {
+    res.send("This Application do not contain any UI, test it with shared pdf and its endpoints using Postman.");
+})
+
 // Server Port 
 app.listen("3000", function () {
     console.log("App running on port 3000.");

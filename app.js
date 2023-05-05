@@ -170,7 +170,7 @@ app.patch('/api/users/:userId', async function(req, res) {
 });
 
 app.get("/", function (req,res) {
-    res.send("This Application do not contain any UI, test it with shared pdf and its endpoints using Postman.");
+    res.send("<h1 style='font-family: Arial, sans-serif; font-size: 24px; font-weight: bold; color: #333333; text-align: center;'>This Application do not contain any UI, test it with shared pdf and its endpoints using Postman.</h1>");
 })
 
 // Server Port 

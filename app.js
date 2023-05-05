@@ -121,6 +121,9 @@ app.post('/api/users/:userId/articles', verifyToken, async function (req, res) {
 function verifyToken(req, res, next) {
     const bearerHeader = req.headers['authorization'];
     // console.log(bearerHeader);
+    if(!bearerHeader){
+        return res.status(401).json({error: 'Please provide JWT token in authorization header'});
+    }
     const bearer = bearerHeader.split(" ");
     const token = bearer[1];
     // console.log(token);
@@ -138,7 +141,7 @@ function verifyToken(req, res, next) {
 }
 
 // 4. Get All Articles
-app.get('/api/articles', async function (req, res) {
+app.get('/api/articles', verifyToken, async function (req, res) {
     try {
         const articles = await Article.find();
         res.status(200).json({ articles });
